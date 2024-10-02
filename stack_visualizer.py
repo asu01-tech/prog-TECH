@@ -11,10 +11,14 @@ def on_button_click():
     second_label.pack(pady=20)
 
 def on_submit():
-    try:
-        num_elements = int(entry.get())
-        if num_elements <= 0:
-            raise ValueError("element sany on boluy kerek")
+        num_elements = entry.get()
+
+        if num_elements.isdigit() and int(num_elements)> 0:
+            num_elements= int(num_elements)
+            
+        else:
+        messagebox.showerror("Kate", "On san boluy kerek")
+
 
 
 root = tk.Tk()
